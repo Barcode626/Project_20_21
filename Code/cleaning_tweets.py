@@ -5,7 +5,9 @@ import re
 import pandas as pd
 import numpy as np
 
-
+###############################################################################
+# For Cleaning
+########################################
 def clean_hashtags(hg):
     if pd.isna(hg):
         return hg     
@@ -58,7 +60,9 @@ def clean_aspects(ap):
         return ap
 
 
-
+###############################################################################
+# From LDA
+########################################
 # LDA
 # Gensim
 import gensim
@@ -129,7 +133,9 @@ def generate_aspects(content):
     return aspects_sorted
 
 
-
+###############################################################################
+# For Word Cloud
+########################################
 # wordcloud hashtags
 def preprocess_hg(content):
     results = []
@@ -138,7 +144,9 @@ def preprocess_hg(content):
             results.append(WordNetLemmatizer().lemmatize(token))
     return results
 
-
+###############################################################################
+# For dividing data by aspects
+########################################
 def dva(content, idx):
     if pd.isna(content):
         return np.nan, np.nan
